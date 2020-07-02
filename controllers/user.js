@@ -11,6 +11,9 @@ module.exports.signUp = function(req, res) {
 module.exports.signIn = function(req, res) {
     return res.render("signIn");
 };
+module.exports.profile = function(req, res) {
+    return res.render("user_profile");
+};
 
 // controller for sign up
 module.exports.createUser = function(req, res) {
@@ -39,4 +42,6 @@ module.exports.createUser = function(req, res) {
 };
 
 // controller for sign in
-module.exports.createSession = function(req, res) {};
+module.exports.createSession = function(req, res) {
+    res.redirect("/user/profile");
+};
