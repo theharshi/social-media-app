@@ -1,2 +1,27 @@
 <link rel="stylesheet" href="/css/home.css" />
-<h1>rendered in home</h1>
+
+<h1>codeial | home</h1>
+<div id="post-content">
+  <% if(locals.user) {%>
+  <form action="/posts/create-post" id="new-post" method="POST">
+    <textarea
+      name="content"
+      cols="30"
+      rows="3"
+      placeholder="Type here..."
+      required
+    ></textarea>
+    <button type="submit">POST</button>
+  </form>
+  <%}%>
+  <div id="posts-list-container">
+    <%- include('_post') -%>
+  </div>
+</div>
+<section id="all-user-profilelinks">
+  <% for (user of all_user){%>
+  <li>
+    <a href="/user/profile/<%=user.id%>"><%= user.name %></a>
+  </li>
+  <%}%>
+</section>
