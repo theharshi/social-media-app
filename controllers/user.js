@@ -1,5 +1,6 @@
 const User = require("../model/user");
-
+const fs = require('fs');
+const path = require('path');
 module.exports.user = function (req, res) {
   return res.end("<h1>INSIDE USER CONTROLLER</h1>");
 };
